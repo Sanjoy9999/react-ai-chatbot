@@ -1,0 +1,29 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 800px;
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  color: light-dark(#0d0d0d, #e2dfdf);
+  background: light-dark(#d7d4d4, #171717);
+}
+
+body.dark-mode {
+  color-scheme: dark;
+  color: #ececec;
+  background: #171717;
+}

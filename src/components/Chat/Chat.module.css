@@ -1,0 +1,53 @@
+.Chat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 8px;
+    /* background-color: aliceblue; */
+    overflow-y: auto;
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.Chat::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.Group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Group:first-of-type {
+    align-items: center;
+}
+
+.Group:first-of-type .Message {
+    font-size: 1.25rem;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.Group:nth-last-of-type(2){
+    /* min-height: calc(100% - 8px); */
+    min-height: 20px;
+}
+
+.Message {
+    width: 90%;
+    padding: 0 16px;
+    border-radius: 16px;
+    font-size: 20px;
+
+    &[data-role="user"] {
+      align-self: flex-end;
+      /* background: #b3a8a8; */
+      background: light-dark(#e6e3e3,#303030);
+    }
+}
