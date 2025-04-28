@@ -21,15 +21,12 @@ export function Chat({ messages }) {
     [messages]
   );
 
+  // Create a string that changes whenever any message content changes
+  const messagesContentKey = messages.map(m => m.content).join("||");
+
   useEffect(() => {
-    const lastMessage = messages[messages.length - 1];
-
-    if (lastMessage?.role === "user") {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
-
-
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages.length, messagesContentKey]);
 
   return (
     <div className={styles.Chat}>
@@ -46,7 +43,7 @@ export function Chat({ messages }) {
           </div>
         )
       )}
-
+      {/* This must be inside the scrollable container */}
       <div ref={messagesEndRef} />
     </div>
   );
